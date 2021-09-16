@@ -479,6 +479,8 @@ h2 {
 
 .about-head {
   margin: 10%;
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 @media screen and (max-width:884px) {
   .about-flex {
@@ -812,11 +814,15 @@ form .form-row .textarea {
   }
 
   .container form {
-    padding: 10px 0;
+    padding: 10px auto;
   }
 
   .container form .form-row {
     display: block;
+  }
+
+  .container form .form-row input[type="email"] {
+    margin: 15px 0;
   }
 
   .row-block {
