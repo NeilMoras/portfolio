@@ -14,7 +14,7 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
 .text-wrapper { max-width: 1200px; margin: 0 auto; position: relative; }
 
 /* ----------HEADER-NAVIGATION------------- */
-#header { position: sticky; z-index: 1; background: #1d1d1d; -webkit-box-shadow: 0 8px 6px -6px #12fcd8; -moz-box-shadow: 0 8px 6px -6px #12fcd8; box-shadow: 0 8px 6px -6px #12fcd8; }
+#header { position: sticky; z-index: 999; background: #1d1d1d; -webkit-box-shadow: 0 8px 6px -6px #12fcd8; -moz-box-shadow: 0 8px 6px -6px #12fcd8; box-shadow: 0 8px 6px -6px #12fcd8; }
 
 #header .nav-flex { display: flex; flex-direction: row; justify-content: flex-end; }
 
@@ -43,7 +43,7 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
 .logo { flex: 1 1 50%; }
 
 /* ----------photo-PORFOLIO------------- */
-#main { padding-bottom: 2em; -webkit-animation: glowLines 24s ease infinite; -moz-animation: glowLines 24s ease infinite; animation: glowLines 60s ease infinite; background-image: url("../image/frost.png"); background-position: right; background-size: cover; background-repeat: no-repeat; background-color: #1d1d1d; overflow: hidden; position: relative; }
+#main { padding-bottom: 2em; -webkit-animation: glowLines 24s ease infinite; -moz-animation: glowLines 24s ease infinite; animation: glowLines 60s ease infinite; background-image: url("../image/frost.png"); background-size: cover; background-repeat: no-repeat; background-color: #1d1d1d; overflow: hidden; position: relative; }
 
 @-webkit-keyframes glowLines { 0% { background-position: 0 47%; }
   50% { background-position: 100% 54%; }
@@ -63,8 +63,6 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
   20% { transform: scale(2); }
   50% { transform: scale(0.9); }
   100% { transform: scale(0.3); } }
-
-.image-self img { max-width: 400px; }
 
 /* ----------MAIN-CONTENT-INFO------------- */
 .lines { position: absolute; top: 0; left: 0; right: 0; height: 100%; margin: auto; width: 90vw; }
@@ -106,13 +104,9 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
     -ms-transform: translateY(-12px);
     transform: translateY(-12px); } }
 
-.hastag { border: 2px solid #fff; background-color: #7f7575; display: inline-block; padding: 7px 20px; border-radius: 5px; margin: 12px; }
+.main-flex { display: flex; flex-flow: row wrap; align-items: center; }
 
-.hastag a { text-decoration: none; font-size: 1em; color: #fff; }
-
-.main-flex { display: flex; flex-flow: row wrap; align-items: center; justify-content: flex-end; z-index: 99; }
-
-.intro-head { flex: 1 0 0; order: -1; margin-left: 12%; z-index: 99; align-items: center; }
+.intro-head { flex: 1 0 0; order: -1; margin-left: 12%; z-index: 3; }
 
 .intro-head p { font-size: 2.1875em; color: #d8d0d0; margin-top: 10px; margin-bottom: 20px; font-family: 'Open Sans', sans-serif; }
 
@@ -122,7 +116,9 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
 
 .intro-head button:hover { color: #000; background-color: #fff; -webkit-box-shadow: 0 8px 6px -6px #12fcd8; -moz-box-shadow: 0 8px 6px -6px #12fcd8; box-shadow: 0 8px 6px -6px #12fcd8; transform: scale(1.1); cursor: pointer; }
 
-.image-self { flex: 1 0 0; order: 1; margin-top: 10%; margin-bottom: 5%; z-index: 999; }
+.image-self { flex: 1 0 0; order: 1; margin-top: 10%; margin-bottom: 5%; z-index: 10; }
+
+.image-self img { max-width: 400px; }
 
 .block { display: block; padding-left: 0; }
 
@@ -132,14 +128,12 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
 
 .social-icon i:hover { box-shadow: inset -3px -3px 7px #12fcd8, inset 3px 3px 5px #12fcd8; color: #000; background: #fff; transform: scale(1.1); border-color: #000; }
 
-.hastag-area { position: relative; left: 19%; bottom: 250px; display: inline-block; }
-
 .arrow i { font-size: 48px; color: #7f7575; position: relative; left: 50%; bottom: 3%; }
 
 .arrow i:hover { transform: scale(1.2); }
 
 @media screen and (max-width: 934px) { .main-flex { flex-direction: column-reverse; justify-content: center; }
-  .image-self { flex: 1 0 0; order: 1; }
+  .image-self { flex: 1 0 0; order: 1; z-index: 3; }
   .image-self img { width: 100vw; padding-left: 12%; } }
 
 /* ----------ABOUT ME SECTION------------- */
@@ -187,7 +181,7 @@ ul.skill-list { margin: 0; }
 #features-section { background-color: #013A6B; background-image: -webkit-linear-gradient(-180deg, #1d1d1d 50%, #222 50%); position: relative; }
 
 /* FEATURE TEST */
-.col-text { min-height: 20em; }
+.col-text { min-height: 20em; color: #fff; }
 
 .col img { width: 500px; padding-left: 15%; }
 
@@ -197,11 +191,15 @@ ul.skill-list { margin: 0; }
 
 .col { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
 
-.col-left { -ms-flex-order: -1; order: -1; }
+.col h3 { padding: 4% 0; font-size: 1.5em; }
+
+.col-left { -ms-flex-order: -1; order: -1; background-color: #1d1d1d; }
 
 .col-text { display: flex; align-items: center; justify-content: center; }
 
 .aligner-item { width: 60%; }
+
+@media (max-width: 998px) { .col img { padding-left: 0; } }
 
 @media (max-width: 750px) { .grid-flex { display: flex; -webkit-flex-direction: column; flex-direction: column; align-items: center; }
   .col-left { -webkit-box-ordinal-group: 0; -ms-flex-order: 0; order: 0; }
@@ -214,7 +212,7 @@ ul.skill-list { margin: 0; }
 
 .wrap { display: flex; flex-flow: row-reverse wrap; align-items: center; gap: 5%; padding: 0 7% 7%; }
 
-.container { max-width: 50%; padding: 25px 25px 10px; color: #fff; border: 2px solid #b60782; }
+.container { max-width: 50%; padding: 25px 25px 10px; color: #fff; border: 2px solid #12fcd8; }
 
 .container .text { text-align: center; font-weight: 600; }
 
@@ -291,11 +289,10 @@ i:hover { color: #12fcd8; }
 
 /* ----------CONTACT FORM------------- */
 @media screen and (max-width: 792px) { .menu-footer { display: none; }
-  #menu { display: none; background-color: #1d1d1d; position: fixed; z-index: 50; width: 60%; right: 0; height: 100vh; text-align: right; }
-  #mob-exit { display: block; }
+  #menu { display: none; background-color: #000; position: fixed; z-index: 999; width: 60%; right: 0; height: 100vh; text-align: right; }
   #menu li { display: block; border-bottom: 1px solid #fff; }
+  #mob-exit { display: block; z-index: 999; }
   #ham-btn-cta { display: block; }
-  .nav-flex { display: flex; flex-direction: row; }
   .hamburger { flex: 1 1 0; font-size: 2.5em; text-align: right; padding: 0.5em; }
   .fa-times-circle { display: block; font-size: 2em; margin: 0.5em; text-align: left; } }
 

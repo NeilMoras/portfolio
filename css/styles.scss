@@ -41,8 +41,8 @@ h2 {
 }
 /* ----------HEADER-NAVIGATION------------- */
 #header {
-  position: sticky;
-  z-index: 1;
+position: sticky;
+  z-index: 999;
   background: #1d1d1d;
   -webkit-box-shadow: 0 8px 6px -6px #12fcd8;
   -moz-box-shadow: 0 8px 6px -6px #12fcd8;
@@ -55,48 +55,50 @@ h2 {
   }
 }
 
-#menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#menu li {
-  display: inline-block;
-  //padding: 1em;
-  font-size: 24px;
-  padding: 25px;
-  font-family: 'Roboto', sans-serif;
-  //transition: all ease-in-out .2s;
-}
-
-#menu a {
-  text-decoration: none;
-  color: #fff;
-
-  &:hover {
-    color: #12fcd8;
+#menu {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
-}
 
-#menu ul:last-child {
-  margin-right: 72px;
-}
+  li {
+    display: inline-block;
+    //padding: 1em;
+    font-size: 24px;
+    padding: 25px;
+    font-family: 'Roboto', sans-serif;
+    //transition: all ease-in-out .2s;
+  }
 
-#menu a::before {
-  transition: 300ms;
-  height: 5px;
-  content: "";
-  position: absolute;
-}
+  a {
+    text-decoration: none;
+    color: #fff;
 
-#menu a::before {
-  width: 0;
-  bottom: 10px;
-}
+    &:hover {
+      color: #12fcd8;
+    }
+  }
 
-#menu a:hover::before {
-  width: 100%;
+  ul:last-child {
+    margin-right: 72px;
+  }
+
+  a::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+  }
+
+  a::before {
+    width: 0;
+    bottom: 10px;
+  }
+
+  a:hover::before {
+    width: 100%;
+  }
 }
 
 #ham-btn-cta {
@@ -121,7 +123,7 @@ h2 {
   -moz-animation: glowLines 24s ease infinite;
   animation: glowLines 60s ease infinite;
   background-image: url("../image/frost.png");
-  background-position: right;
+  // background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #1d1d1d;
@@ -196,9 +198,7 @@ h2 {
   }
 }
 
-.image-self img {
-  max-width: 400px;
-}
+
 /* ----------MAIN-CONTENT-INFO------------- */
 // ABOUT SECTION
 
@@ -316,36 +316,18 @@ h2 {
   }
 }
 
-.hastag {
-  border: 2px solid #fff;
-  background-color: #7f7575;
-  display: inline-block;
-  padding: 7px 20px;
-  border-radius: 5px;
-  margin: 12px;
-
-  a {
-    text-decoration: none;
-    font-size: 1em;
-    color: #fff;
-  }
-}
-
 .main-flex {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: flex-end;
-  z-index: 99;
 }
 
 .intro-head {
   flex: 1 0 0;
   order: -1;
   margin-left: 12%;
-  z-index: 99;
-  align-items: center;
-
+  z-index: 3;
+  // align-items: center;
   p {
     font-size: 2.1875em;
     color: #d8d0d0;
@@ -382,7 +364,10 @@ h2 {
   order: 1;
   margin-top: 10%;
   margin-bottom: 5%;
-  z-index: 999;
+  z-index: 10;
+   img {
+    max-width: 400px;
+  }
 }
 
 .block {
@@ -417,13 +402,6 @@ h2 {
   }
 }
 
-.hastag-area {
-  position: relative;
-  left: 19%;
-  bottom: 250px;
-  display: inline-block;
-}
-
 .arrow i {
   font-size: 48px;
   color: #7f7575;
@@ -444,6 +422,7 @@ h2 {
   .image-self {
     flex: 1 0 0;
     order: 1;
+    z-index: 3;
 
     img {
       width: 100vw;
@@ -595,6 +574,8 @@ ul.skill-list {
 /* FEATURE TEST */
 .col-text {
   min-height: 20em;
+
+  color: #fff;
 }
 
 .col img {
@@ -626,11 +607,17 @@ ul.skill-list {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+
+  h3{
+    padding: 4% 0;
+    font-size: 1.5em;
+  }
 }
 
 .col-left {
   -ms-flex-order: -1;
   order: -1;
+  background-color: #1d1d1d;
 }
 
 .col-text {
@@ -642,6 +629,13 @@ ul.skill-list {
 .aligner-item {
   width: 60%;
 }
+
+@media (max-width: 998px) {
+  .col img {
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 750px) {
   .grid-flex {
     display: flex;
@@ -662,6 +656,8 @@ ul.skill-list {
 
   .aligner-item {
     width: 100%;
+
+
   }
 
   .col img {
@@ -687,7 +683,7 @@ ul.skill-list {
   max-width: 50%;
   padding: 25px 25px 10px;
   color: #fff;
-  border: 2px solid #b60782;
+  border: 2px solid #12fcd8;
 }
 
 .container .text {
@@ -927,33 +923,32 @@ i:hover {
 
   #menu {
     display: none;
-    background-color: #1d1d1d;
+    background-color: #000;
     position: fixed;
-    z-index: 50;
+    z-index: 999;
     width: 60%;
     right: 0;
     height: 100vh;
     text-align: right;
+
+    li {
+      display: block;
+      border-bottom: 1px solid #fff;
+    }
   }
 
   #mob-exit {
     display: block;
-  }
-
-  #menu li {
-    display: block;
-    border-bottom: 1px solid #fff;
+    z-index: 999;
   }
 
   #ham-btn-cta {
     display: block;
   }
-
-  .nav-flex {
-    display: flex;
-    flex-direction: row;
-  }
-
+  // .nav-flex {
+  //   display: flex;
+  //   flex-direction: row;
+  // }
   .hamburger {
     flex: 1 1 0;
     font-size: 2.5em;
