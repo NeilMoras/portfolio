@@ -6,6 +6,7 @@
 
 html {
   box-sizing: border-box;
+  background-color: #1d1d1d;
 }
 
 *,
@@ -62,11 +63,9 @@ h2 {
 
 #menu li {
   display: inline-block;
-  padding: 1em;
   font-size: 24px;
   padding: 25px;
   font-family: 'Roboto', sans-serif;
-  transition: all ease-in-out .2s;
 }
 
 #menu a {
@@ -74,24 +73,27 @@ h2 {
   color: #fff;
 }
 
+#menu a:hover {
+  color: #12fcd8;
+}
+
 #menu ul:last-child {
   margin-right: 72px;
 }
 
-#menu li::before {
+#menu a::before {
   transition: 300ms;
   height: 5px;
   content: "";
   position: absolute;
-  background-color: #031D44;
 }
 
-.btm-underline::before {
+#menu a::before {
   width: 0;
   bottom: 10px;
 }
 
-.btm-underline:hover::before {
+#menu a:hover::before {
   width: 100%;
 }
 
@@ -113,13 +115,10 @@ h2 {
 
 /* ----------photo-PORFOLIO------------- */
 #main {
-  display: block;
   padding-bottom: 2em;
-  background-color: linear-gradient(271deg, #333, #080909);
-  background-size: 400% 400%;
-  -webkit-animation: AnimationName 24s ease infinite;
-  -moz-animation: AnimationName 24s ease infinite;
-  animation: AnimationName 60s ease infinite;
+  -webkit-animation: glowLines 24s ease infinite;
+  -moz-animation: glowLines 24s ease infinite;
+  animation: glowLines 60s ease infinite;
   background-image: url("../image/frost.png");
   background-position: right;
   background-size: cover;
@@ -129,7 +128,7 @@ h2 {
   position: relative;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes glowLines {
   0% {
     background-position: 0 47%;
   }
@@ -141,7 +140,7 @@ h2 {
   }
 }
 
-@-moz-keyframes AnimationName {
+@-moz-keyframes glowLines {
   0% {
     background-position: 0 47%;
   }
@@ -153,7 +152,7 @@ h2 {
   }
 }
 
-@keyframes AnimationName {
+@keyframes glowLines {
   0% {
     background-position: 0 47%;
   }
@@ -181,13 +180,13 @@ h2 {
     transform: scale(3);
   }
   20% {
-    transition: scale(2);
+    transform: scale(2);
   }
   50% {
-    transition: scale(0.9);
+    transform: scale(0.9);
   }
   100% {
-    transition: scale(0.3);
+    transform: scale(0.3);
   }
 }
 
@@ -440,7 +439,7 @@ h2 {
     order: 1;
   }
   .image-self img {
-    width: 100%;
+    width: 100vw;
     padding-left: 12%;
   }
 }
@@ -451,12 +450,39 @@ h2 {
   background-image: -webkit-linear-gradient(-30deg, #1d1d1d 50%, #222 50%);
 }
 
+.about-flex {
+  display: flex;
+  flex-flow: row;
+  padding: 5% 0;
+}
+
+.about-image-self {
+  margin-left: 5%;
+}
+
+.about-image-self img {
+  width: 350px;
+  border-radius: 200px 50px 200px;
+  transform: rotate(-10deg);
+}
+
+.about-image-self img:hover {
+  filter: sepia(50%);
+}
+
 .about-head {
-  flex: 1 0 0;
-  order: -1;
-  margin-left: 12%;
-  z-index: 99;
-  align-items: center;
+  margin: 10%;
+}
+
+@media screen and (max-width: 884px) {
+  .about-flex {
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  .about-image-self img {
+    width: 70vw;
+    transform: rotate(0deg);
+  }
 }
 
 /* ----------SKILLS SECTION------------- */
@@ -480,8 +506,7 @@ h2 {
 .skill-heading h2 {
   text-align: right;
   font-size: 3em;
-  padding-top: 1em;
-  padding-right: 3em;
+  padding: 8%;
   color: #12fcd8;
 }
 
@@ -489,9 +514,9 @@ h2 {
   width: 227px;
   height: 300px;
   position: relative;
-  font-size: 0.9em;
+  font-size: 0.8em;
   background-color: #3f4042;
-  padding: 0.5em;
+  padding: 2%;
   opacity: 0.80;
   color: #fff;
 }
@@ -506,8 +531,8 @@ h2 {
   height: 300px;
   position: relative;
   background-color: #3f4042;
-  font-size: 0.9em;
-  padding: 0.5em;
+  font-size: 0.8em;
+  padding: 2%;
   opacity: 0.80;
   color: #fff;
 }
@@ -563,12 +588,12 @@ ul.skill-list {
 
 /* FEATURE TEST */
 .col-text {
-  minheight: 20em;
+  min-height: 20em;
 }
 
 .col img {
-  width: 80%;
-  margin: 2%;
+  width: 500px;
+  padding-left: 15%;
 }
 
 .grid-flex {
@@ -578,15 +603,12 @@ ul.skill-list {
   display: flex;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
   flex-direction: row;
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
-  -webkit-justify-content: space-around;
+  justify-content: space-evenly;
   border-block: 2px solid #fff;
   margin: 2% 0;
-  padding: 2% auto;
 }
 
 .grid-flex:last-of-type {
@@ -601,8 +623,6 @@ ul.skill-list {
 }
 
 .col-left {
-  -webkit-box-ordinal-group: -1;
-  -webkit-order: -1;
   -ms-flex-order: -1;
   order: -1;
 }
@@ -611,26 +631,21 @@ ul.skill-list {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3%;
 }
 
 .aligner-item {
   width: 60%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .grid-flex {
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
-    justify-content: center;
-  }
-  .col {
-    order: vertical;
+    align-items: center;
   }
   .col-left {
     -webkit-box-ordinal-group: 0;
-    -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
   }
@@ -638,7 +653,11 @@ ul.skill-list {
     padding: 1em;
   }
   .aligner-item {
-    width: 90%;
+    width: 100%;
+  }
+  .col img {
+    width: 100%;
+    padding: 2%;
   }
 }
 
@@ -754,17 +773,22 @@ form .form-row .textarea {
 }
 
 .form-btn input[type="submit"] {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  padding: 1em;
+  padding: 0.5em 1em;
   width: 35%;
+  margin-left: 2%;
   text-align: center;
   border: 2px solid #12fcd8;
   background-color: #1d1d1d;
   color: #12fcd8;
+}
+
+.form-btn input[type="submit"]:hover {
+  transform: scale(1.1);
 }
 
 @media (max-width: 700px) {
@@ -785,9 +809,6 @@ form .form-row .textarea {
   }
   .container form .form-row {
     display: block;
-  }
-  form .form-row input-data {
-    margin: 20px 0 !important !important;
   }
   .row-block {
     margin-top: 15px;
@@ -813,6 +834,16 @@ form .form-row .textarea {
 .icons a i {
   font-size: 3em;
   color: #12fcd8;
+}
+
+@media (max-width: 572px) {
+  .contact-heading h2,
+  .feature-heading h2,
+  .skill-heading h2 {
+    text-align: center;
+    padding: 8% 0;
+    font-size: 2.5em;
+  }
 }
 
 @media (max-width: 513px) {
@@ -850,7 +881,6 @@ form .form-row .textarea {
 
 .menu-footer li {
   display: inline-block;
-  padding: 1em;
   font-size: 24px;
   padding: 25px;
   font-family: 'Roboto', sans-serif;
