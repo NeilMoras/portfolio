@@ -16,6 +16,7 @@ html {
   box-sizing: inherit;
 }
 
+
 body {
   margin: 0 auto;
   color: #fff;
@@ -341,9 +342,10 @@ position: sticky;
     color: #fff;
   }
 
-  button {
+   a{
     border: none;
-    background: #12fcd8;
+      color: #000;
+     background: #12fcd8;
     padding: 0.7em 1.6em;
     border-radius: 5px 25px;
 
@@ -472,6 +474,17 @@ position: sticky;
     transform: rotate(0deg);
   }
 }
+
+#code-banner{
+width: 100%;
+height: 200px;
+background-image: url("../image/code-green-unsplash.jpg");
+z-index: 99;
+opacity: 0.6;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
 /* ----------SKILLS SECTION------------- */
 #skills-section {
   position: relative;
@@ -535,7 +548,7 @@ position: sticky;
 .fa-database {
   font-size: 2.2em;
   position: absolute;
-  left: 30%;
+  left: 34%;
   top: -15%;
   background-color: #786f6f;
   padding: 0.75em;
@@ -558,6 +571,31 @@ ul.skill-list {
   margin-right: 0.5em;
   color: #12fcd8;
 }
+
+.skill-language-div{
+  background-color: #fff;
+  opacity: 0.8;
+
+  h3{
+    color: #000;
+    text-align: center;
+    font-size: 1.6em;
+    padding: 3% 0 1%;
+    border-bottom: 2px solid #000;
+  }
+
+  img{
+    width: 80px;
+  }
+}
+.language-flex{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap:2%;
+  padding: 3%;
+}
+
 /* ----------FEATURED WORKS------------ */
 .feature-heading h2 {
   text-align: left;
@@ -578,10 +616,6 @@ ul.skill-list {
   color: #fff;
 }
 
-.col img {
-  width: 500px;
-  padding-left: 15%;
-}
 
 .grid-flex {
   display: -webkit-box;
@@ -607,10 +641,28 @@ ul.skill-list {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  padding-bottom: 6%;
 
   h3{
     padding: 4% 0;
     font-size: 1.5em;
+  }
+
+  img {
+    width: 100%;
+    padding-left: 10%;
+  }
+  a{
+    text-decoration: none;
+    margin: 5% ;
+    background: #fff;
+    padding: 2% 4%;
+ text-align: center;
+    border-radius: 5px;
+    border: 2px solid red;
+  }
+  p{
+    margin-bottom: 6%;
   }
 }
 
@@ -810,7 +862,7 @@ form .form-row .textarea {
   }
 
   .container form {
-    padding: 10px auto;
+    padding: 10px;
   }
 
   .container form .form-row {
@@ -845,6 +897,11 @@ form .form-row .textarea {
   a i {
     font-size: 3em;
     color: #12fcd8;
+
+    &:hover{
+      transform:scale(1.2) ;
+
+    }
   }
 }
 @media (max-width: 572px) {

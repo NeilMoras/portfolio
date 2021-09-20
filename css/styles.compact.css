@@ -112,9 +112,9 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
 
 .intro-head h1 { font-size: 3.75em; color: #fff; }
 
-.intro-head button { border: none; background: #12fcd8; padding: 0.7em 1.6em; border-radius: 5px 25px; }
+.intro-head a { border: none; color: #000; background: #12fcd8; padding: 0.7em 1.6em; border-radius: 5px 25px; }
 
-.intro-head button:hover { color: #000; background-color: #fff; -webkit-box-shadow: 0 8px 6px -6px #12fcd8; -moz-box-shadow: 0 8px 6px -6px #12fcd8; box-shadow: 0 8px 6px -6px #12fcd8; transform: scale(1.1); cursor: pointer; }
+.intro-head a:hover { color: #000; background-color: #fff; -webkit-box-shadow: 0 8px 6px -6px #12fcd8; -moz-box-shadow: 0 8px 6px -6px #12fcd8; box-shadow: 0 8px 6px -6px #12fcd8; transform: scale(1.1); cursor: pointer; }
 
 .image-self { flex: 1 0 0; order: 1; margin-top: 10%; margin-bottom: 5%; z-index: 10; }
 
@@ -152,6 +152,8 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
 @media screen and (max-width: 884px) { .about-flex { flex-flow: column wrap; align-items: center; }
   .about-image-self img { width: 70vw; transform: rotate(0deg); } }
 
+#code-banner { width: 100%; height: 200px; background-image: url("../image/code-green-unsplash.jpg"); z-index: 99; opacity: 0.6; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+
 /* ----------SKILLS SECTION------------- */
 #skills-section { position: relative; background-image: url("../image/glen-carsten-unplash.jpg"); background-position: right; background-size: cover; background-repeat: no-repeat; background-color: #201e1e; }
 
@@ -167,13 +169,21 @@ h1, h2 { font-family: 'Montserrat', sans-serif; }
 
 .backend-container h3, .front-container h3 { font-size: 20px; text-align: center; padding-top: 15%; }
 
-.fa-code, .fa-database { font-size: 2.2em; position: absolute; left: 30%; top: -15%; background-color: #786f6f; padding: 0.75em; border-radius: 90%; }
+.fa-code, .fa-database { font-size: 2.2em; position: absolute; left: 34%; top: -15%; background-color: #786f6f; padding: 0.75em; border-radius: 90%; }
 
 ul.skill-list { margin: 0; }
 
 .skill-list li { list-style: none; margin-bottom: 1.5em; font-size: 1.1em; position: relative; margin-left: 0; }
 
 .fa-check-circle { margin-right: 0.5em; color: #12fcd8; }
+
+.skill-language-div { background-color: #fff; opacity: 0.8; }
+
+.skill-language-div h3 { color: #000; text-align: center; font-size: 1.6em; padding: 3% 0 1%; border-bottom: 2px solid #000; }
+
+.skill-language-div img { width: 80px; }
+
+.language-flex { display: flex; flex-flow: row wrap; align-items: center; gap: 2%; padding: 3%; }
 
 /* ----------FEATURED WORKS------------ */
 .feature-heading h2 { text-align: left; font-size: 3em; padding: 1em; color: #12fcd8; }
@@ -183,15 +193,19 @@ ul.skill-list { margin: 0; }
 /* FEATURE TEST */
 .col-text { min-height: 20em; color: #fff; }
 
-.col img { width: 500px; padding-left: 15%; }
-
 .grid-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex-grow: 1; flex-direction: row; -webkit-flex-direction: row; -webkit-flex-wrap: wrap; justify-content: space-evenly; border-block: 2px solid #fff; margin: 2% 0; }
 
 .grid-flex:last-of-type { margin-bottom: 0; }
 
-.col { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
+.col { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; padding-bottom: 6%; }
 
 .col h3 { padding: 4% 0; font-size: 1.5em; }
+
+.col img { width: 100%; padding-left: 10%; }
+
+.col a { text-decoration: none; margin: 5%; background: #fff; padding: 2% 4%; text-align: center; border-radius: 5px; border: 2px solid red; }
+
+.col p { margin-bottom: 6%; }
 
 .col-left { -ms-flex-order: -1; order: -1; background-color: #1d1d1d; }
 
@@ -250,7 +264,7 @@ form .form-row .textarea { height: 70px; }
 
 @media (max-width: 700px) { .container .text { font-size: 20px; }
   .input-data input, .textarea textarea { display: block; width: 100%; height: 100%; border: 2px solid #000; font-size: 17px; background: #fff; }
-  .container form { padding: 10px auto; }
+  .container form { padding: 10px; }
   .container form .form-row { display: block; }
   .container form .form-row input[type="email"] { margin: 15px 0; }
   .row-block { margin-top: 15px; }
@@ -261,6 +275,8 @@ form .form-row .textarea { height: 70px; }
 .icons { display: flex; justify-content: space-evenly; padding-bottom: 4%; }
 
 .icons a i { font-size: 3em; color: #12fcd8; }
+
+.icons a i:hover { transform: scale(1.2); }
 
 @media (max-width: 572px) { .contact-heading h2, .feature-heading h2, .skill-heading h2 { text-align: center; padding: 8% 0; font-size: 2.5em; } }
 
