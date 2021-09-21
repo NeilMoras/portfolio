@@ -57,9 +57,9 @@
         </div>
       </div>
       <div class="social-icon">
-        <a  aria-label="linkedin icon" rel="noreferrer" href="https://www.linkedin.com/in/neil-moras-577a96a5/" target="_blank"><span class="hidden">linkedin link</span><i class="fab icon fa-linkedin-in"></i></a>
-        <a aria-label="email icon" rel="noreferrer" href="#contact-section"><span class="hidden">Email link</span><i class="far icon fa-envelope"></i></a>
-        <a aria-label="github icon"  rel="noreferrer" href="https://github.com/NeilMoras" target="_blank"><span class="hidden">Githublink icon</span><i class="fab fa-github"></i></a>
+        <a  aria-label="linkedin icon" rel="noreferrer" href="https://www.linkedin.com/in/neil-moras-577a96a5/" target="_blank"><span class="hidden">linkedin link Opens in New Tab</span><i class="fab icon fa-linkedin-in"></i></a>
+        <a aria-label="email icon" rel="noreferrer" href="#contact-section"><span class="hidden">Email link Opens in New Tab</span><i class="far icon fa-envelope"></i></a>
+        <a aria-label="github icon"  rel="noreferrer" href="https://github.com/NeilMoras" target="_blank"><span class="hidden">Githublink icon Opens in New Tab</span><i class="fab fa-github"></i></a>
       </div>
       <div class="arrow">
         <a href="#about-section"><span class="hidden">Down Arrow</span><i class="fas fa-chevron-circle-down"></i></a>
@@ -117,7 +117,7 @@
         </div>
       <div class="skill-language-div">
           <div class="text-wrapper">
-        <h3>Languages</h3>
+        <h3>Languages and Technologies</h3>
         <div class="language-flex">
             <img src="image/html.png" alt="image of html">
             <img src="image/css.png" alt="image of css">
@@ -129,7 +129,9 @@
             <img src="image/c-sharp.png" alt="image of c-sharp">
             <img src="image/asp.net.jpeg" alt="image of asp.net">
             <img src="image/react-native.png" alt="image of react-native">
-              <img src="image/react.png" alt="image of react.js">
+            <img src="image/react.png" alt="image of react.js">
+            <img src="image/sass.png" alt="image of sass">
+            <img src="image/node.js.png" alt="image of node.js">
         </div>
 
       </div>
@@ -283,9 +285,9 @@
       </div>
     </div>
     <div class="icons">
-      <a rel="noreferrer" href="https://www.linkedin.com/in/neil-moras-577a96a5/" target="_blank"><span class="hidden">linkedin icon</span><i class="fab icon fa-linkedin-in"></i></a>
-      <a href="#contact-section"><span class="hidden">Email link</span><i class="far icon fa-envelope"></i></a>
-      <a rel="noreferrer" href="https://github.com/NeilMoras" target="_blank"><span class="hidden">Githublink icon</span><i class="fab fa-github"></i></a>
+      <a rel="noreferrer" href="https://www.linkedin.com/in/neil-moras-577a96a5/" target="_blank"><span class="hidden">linkedin icon opens in New Tab</span><i class="fab icon fa-linkedin-in"></i></a>
+      <a href="#contact-section"><span class="hidden">Email link Opens in New Tab</span><i class="far icon fa-envelope"></i></a>
+      <a rel="noreferrer" href="https://github.com/NeilMoras" target="_blank"><span class="hidden">Githublink icon Opens in New Tab</span><i class="fab fa-github"></i></a>
     </div>
   </div>
   </section>
