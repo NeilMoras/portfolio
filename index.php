@@ -52,7 +52,7 @@
         </div>
         <div class="intro-head">
           <h1><span>Hi,</span> <span class="block name-span">I'm Neil</span></h1>
-          <p><span>a</span> <span>web developer</span> <span>based</span> <span>in</span><span class="block">Toronto, Canada</span></p>
+          <p><span>a</span><span>web developer</span> <span>based</span> <span>in</span><span class="block">Toronto, Canada</span></p>
           <a href="resume/neil-resume.pdf" class="btn" download><i class="fa fa-download"></i><span class="hidden">Download</span>Resume</a>
         </div>
       </div>

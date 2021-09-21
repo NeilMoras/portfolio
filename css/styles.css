@@ -420,6 +420,21 @@ h2 {
   }
 }
 
+@media screen and (max-width: 498px) {
+  .intro-head h1 {
+    font-size: 3.5em;
+  }
+  .image-self {
+    flex: 1 0 0;
+    order: 1;
+    z-index: 3;
+  }
+  .image-self img {
+    width: 100vw;
+    padding: 5%;
+  }
+}
+
 /* ----------ABOUT ME SECTION------------- */
 #about-section {
   background-color: #013A6B;
