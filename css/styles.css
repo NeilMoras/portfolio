@@ -75,6 +75,7 @@ h2 {
 
 #menu a:hover {
   color: #12fcd8;
+  text-decoration: underline;
 }
 
 #menu ul:last-child {
@@ -97,8 +98,20 @@ h2 {
   width: 100%;
 }
 
+.hamburger button {
+  background-color: transparent;
+  border-width: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0;
+}
+
 #ham-btn-cta {
   display: none;
+  color: #fff;
 }
 
 #mob-exit {
@@ -163,6 +176,12 @@ h2 {
   }
 }
 
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
 .circle {
   width: 100%;
   height: 100%;
@@ -170,22 +189,22 @@ h2 {
   filter: blur(10px);
   position: absolute;
   border-radius: 80%;
-  animation: grow 15s ease infinite alternate;
+  animation: grow 15s ease-in-out infinite alternate;
   overflow: hidden;
 }
 
 @keyframes grow {
   0% {
-    transform: scale(3);
+    transform: scale(1);
   }
   20% {
     transform: scale(2);
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(3);
   }
   100% {
-    transform: scale(0.3);
+    transform: scale(4);
   }
 }
 
@@ -418,6 +437,39 @@ h2 {
     width: 100vw;
     padding-left: 12%;
   }
+  #menu {
+    display: none;
+    background-color: #000;
+    position: fixed;
+    z-index: 999;
+    width: 60%;
+    right: 0;
+    height: 100vh;
+    text-align: right;
+  }
+  #menu li {
+    display: block;
+    border-bottom: 1px solid #fff;
+  }
+  #mob-exit {
+    display: block;
+    z-index: 999;
+  }
+  #ham-btn-cta {
+    display: block;
+  }
+  .hamburger {
+    flex: 1 1 0;
+    font-size: 2.5em;
+    text-align: right;
+    padding: 0.5em;
+  }
+  .fa-times-circle {
+    display: block;
+    font-size: 2em;
+    margin: 0.5em;
+    text-align: left;
+  }
 }
 
 @media screen and (max-width: 498px) {
@@ -633,7 +685,7 @@ ul.skill-list {
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
   justify-content: space-evenly;
-  border-block: 2px solid #fff;
+  border-block: 0.2px solid #fff;
   margin: 2% 0;
 }
 
@@ -646,7 +698,7 @@ ul.skill-list {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding-bottom: 6%;
+  padding: 5% 0;
 }
 
 .col h3 {
@@ -671,6 +723,9 @@ ul.skill-list {
 
 .col a:hover {
   color: #000;
+  -webkit-box-shadow: 0 8px 6px -6px #12fcd8;
+  -moz-box-shadow: 0 8px 6px -6px #12fcd8;
+  box-shadow: 0 8px 6px -6px #12fcd8;
 }
 
 .col p {
@@ -960,12 +1015,13 @@ form .form-row .textarea {
   color: #fff;
 }
 
-.menu-footer ul:last-child {
-  margin-right: 72px;
+.menu-footer a:hover {
+  color: #12fcd8;
+  text-decoration: underline;
 }
 
-a:hover {
-  color: #12fcd8;
+.menu-footer ul:last-child {
+  margin-right: 72px;
 }
 
 i:hover {
@@ -980,39 +1036,6 @@ i:hover {
 @media screen and (max-width: 792px) {
   .menu-footer {
     display: none;
-  }
-  #menu {
-    display: none;
-    background-color: #000;
-    position: fixed;
-    z-index: 999;
-    width: 60%;
-    right: 0;
-    height: 100vh;
-    text-align: right;
-  }
-  #menu li {
-    display: block;
-    border-bottom: 1px solid #fff;
-  }
-  #mob-exit {
-    display: block;
-    z-index: 999;
-  }
-  #ham-btn-cta {
-    display: block;
-  }
-  .hamburger {
-    flex: 1 1 0;
-    font-size: 2.5em;
-    text-align: right;
-    padding: 0.5em;
-  }
-  .fa-times-circle {
-    display: block;
-    font-size: 2em;
-    margin: 0.5em;
-    text-align: left;
   }
 }
 

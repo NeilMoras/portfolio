@@ -16,7 +16,6 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
   margin: 0 auto;
   color: #fff;
@@ -42,7 +41,7 @@ h2 {
 }
 /* ----------HEADER-NAVIGATION------------- */
 #header {
-position: sticky;
+  position: sticky;
   z-index: 999;
   background: #1d1d1d;
   -webkit-box-shadow: 0 8px 6px -6px #12fcd8;
@@ -78,6 +77,7 @@ position: sticky;
 
     &:hover {
       color: #12fcd8;
+      text-decoration: underline;
     }
   }
 
@@ -102,8 +102,20 @@ position: sticky;
   }
 }
 
+.hamburger button {
+  background-color: transparent;
+  border-width: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0;
+}
+
 #ham-btn-cta {
   display: none;
+  color: #fff;
 }
 
 #mob-exit {
@@ -171,6 +183,12 @@ position: sticky;
   }
 }
 
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
 .circle {
   width: 100%;
   height: 100%;
@@ -178,12 +196,12 @@ position: sticky;
   filter: blur(10px);
   position: absolute;
   border-radius: 80%;
-  animation: grow 15s ease infinite alternate;
+  animation: grow 15s ease-in-out infinite alternate;
   overflow: hidden;
 }
 @keyframes grow {
   0% {
-    transform: scale(3);
+    transform: scale(1);
   }
 
   20% {
@@ -191,15 +209,13 @@ position: sticky;
   }
 
   50% {
-    transform: scale(0.9);
+    transform: scale(3);
   }
 
   100% {
-    transform: scale(0.3);
+    transform: scale(4);
   }
 }
-
-
 /* ----------MAIN-CONTENT-INFO------------- */
 // ABOUT SECTION
 
@@ -342,10 +358,10 @@ position: sticky;
     color: #fff;
   }
 
-   a{
+  a {
     border: none;
-      color: #000;
-     background: #12fcd8;
+    color: #000;
+    background: #12fcd8;
     padding: 0.7em 1.6em;
     border-radius: 5px 25px;
 
@@ -367,7 +383,8 @@ position: sticky;
   margin-top: 10%;
   margin-bottom: 5%;
   z-index: 10;
-   img {
+
+  img {
     max-width: 400px;
   }
 }
@@ -431,13 +448,55 @@ position: sticky;
       padding-left: 12%;
     }
   }
+
+
+
+  #menu {
+    display: none;
+    background-color: #000;
+    position: fixed;
+    z-index: 999;
+    width: 60%;
+    right: 0;
+    height: 100vh;
+    text-align: right;
+
+    li {
+      display: block;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  #mob-exit {
+    display: block;
+    z-index: 999;
+  }
+
+  #ham-btn-cta {
+    display: block;
+  }
+  // .nav-flex {
+  //   display: flex;
+  //   flex-direction: row;
+  // }
+  .hamburger {
+    flex: 1 1 0;
+    font-size: 2.5em;
+    text-align: right;
+    padding: 0.5em;
+  }
+
+  .fa-times-circle {
+    display: block;
+    font-size: 2em;
+    margin: 0.5em;
+    text-align: left;
+  }
 }
-
-
 @media screen and (max-width:498px) {
-.intro-head h1{
-  font-size: 3.5em;
-}
+  .intro-head h1 {
+    font-size: 3.5em;
+  }
 
   .image-self {
     flex: 1 0 0;
@@ -493,15 +552,15 @@ position: sticky;
   }
 }
 
-#code-banner{
-width: 100%;
-height: 200px;
-background-image: url("../image/code-green-unsplash.jpg");
-z-index: 99;
-opacity: 0.6;
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
+#code-banner {
+  width: 100%;
+  height: 200px;
+  background-image: url("../image/code-green-unsplash.jpg");
+  z-index: 99;
+  opacity: 0.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 /* ----------SKILLS SECTION------------- */
 #skills-section {
@@ -590,33 +649,31 @@ ul.skill-list {
   color: #12fcd8;
 }
 
-.skill-language-div{
+.skill-language-div {
   background-color: #fff;
   opacity: 0.8;
 
-  h3{
+  h3 {
     color: #000;
     text-align: center;
     font-size: 1.6em;
     padding: 3% 0 1%;
     border-bottom: 2px solid #000;
   }
-
-
 }
-.language-flex{
+
+.language-flex {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  gap:3%;
+  gap: 3%;
   padding: 3%;
-  img{
-    width:80px;
-margin: 0.6em;
+
+  img {
+    width: 80px;
+    margin: 0.6em;
   }
-
 }
-
 /* ----------FEATURED WORKS------------ */
 .feature-heading h2 {
   text-align: left;
@@ -633,10 +690,8 @@ margin: 0.6em;
 /* FEATURE TEST */
 .col-text {
   min-height: 20em;
-
   color: #fff;
 }
-
 
 .grid-flex {
   display: -webkit-box;
@@ -649,7 +704,7 @@ margin: 0.6em;
   -webkit-flex-direction: row;
   -webkit-flex-wrap: wrap;
   justify-content: space-evenly;
-  border-block: 2px solid #fff;
+  border-block: 0.2px solid #fff;
   margin: 2% 0;
 }
 
@@ -662,33 +717,36 @@ margin: 0.6em;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding-bottom: 6%;
+  padding: 5% 0;
 
-
-  h3{
+  h3 {
     padding: 4% 0;
     font-size: 1.5em;
-
   }
 
   img {
     width: 100%;
     padding-left: 10%;
   }
-  a{
+
+  a {
     text-decoration: none;
-    margin: 5% ;
+    margin: 5%;
     background: #fff;
     padding: 2% 4%;
     text-align: center;
     border-radius: 8px;
     border: 4px solid #555;
 
-    &:hover{
+    &:hover {
       color: #000;
+      -webkit-box-shadow: 0 8px 6px -6px #12fcd8;
+      -moz-box-shadow: 0 8px 6px -6px #12fcd8;
+      box-shadow: 0 8px 6px -6px #12fcd8;
     }
   }
-  p{
+
+  p {
     margin-bottom: 6%;
   }
 }
@@ -703,19 +761,16 @@ margin: 0.6em;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .aligner-item {
   width: 60%;
 }
-
 @media (max-width: 998px) {
   .col img {
     padding-left: 0;
   }
 }
-
 @media (max-width: 750px) {
   .grid-flex {
     display: flex;
@@ -736,8 +791,6 @@ margin: 0.6em;
 
   .aligner-item {
     width: 100%;
-
-
   }
 
   .col img {
@@ -926,9 +979,8 @@ form .form-row .textarea {
     font-size: 3em;
     color: #12fcd8;
 
-    &:hover{
-      transform:scale(1.2) ;
-
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }
@@ -983,15 +1035,19 @@ form .form-row .textarea {
 .menu-footer a {
   text-decoration: none;
   color: #fff;
-}
+
+  &:hover{
+      color: #12fcd8;
+      text-decoration: underline;
+    }
+  }
+
 
 .menu-footer ul:last-child {
   margin-right: 72px;
 }
 
-a:hover {
-  color: #12fcd8;
-}
+
 
 i:hover {
   color: #12fcd8;
@@ -1006,47 +1062,7 @@ i:hover {
     display: none;
   }
 
-  #menu {
-    display: none;
-    background-color: #000;
-    position: fixed;
-    z-index: 999;
-    width: 60%;
-    right: 0;
-    height: 100vh;
-    text-align: right;
 
-    li {
-      display: block;
-      border-bottom: 1px solid #fff;
-    }
-  }
-
-  #mob-exit {
-    display: block;
-    z-index: 999;
-  }
-
-  #ham-btn-cta {
-    display: block;
-  }
-  // .nav-flex {
-  //   display: flex;
-  //   flex-direction: row;
-  // }
-  .hamburger {
-    flex: 1 1 0;
-    font-size: 2.5em;
-    text-align: right;
-    padding: 0.5em;
-  }
-
-  .fa-times-circle {
-    display: block;
-    font-size: 2em;
-    margin: 0.5em;
-    text-align: left;
-  }
 }
 @media screen and (max-width:1160px) {
   .wrap {

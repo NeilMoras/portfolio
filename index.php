@@ -1,3 +1,30 @@
+<?php
+require_once "contactForm/contactValidation.php";
+require_once "vendor/autoload.php";
+
+$formSentMessage = "";
+$errors = "";
+if(isset($_POST['submitForm'])) {
+$fullName = isset($_POST['fullname']);
+$email = isset($_POST['email']);
+$subject = isset($_POST['subject']);
+$message = isset($_POST['message']);
+
+
+//STORE THE VALIDATE FUNCTION TO THE VARIABLE
+$errors = validateContactForm($fullName,$email, $subject, $message,$errors);
+
+//IF THE ERROR MESSAGE IS EMPTY ,THEN EXECUTE THE CLASS TO STORE THE INFORMATION TO THE DATABASE AND ALSO SENT AN EMAIL
+if (empty($errors)) {
+        require_once 'ContactForm/phpmailer.php';
+        $formSentMessage = "Thank you for contacting me $fullName, I shall get in touch with you sooon!";
+        ;        } else {
+        $formSentMessage = "";
+
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -31,7 +58,8 @@
           </ul>
         </nav>
         <div class="hamburger">
-          <i id="ham-btn-cta" class="fas fa-bars"></i>
+        <button class="menu-trigger"><i id="ham-btn-cta" class="fas fa-bars"></i><span class="hidden">Main Menu</span></button>
+        <span class="hidden">Main nenu</span>
         </div>
       </div>
     </div>
@@ -53,7 +81,7 @@
         <div class="intro-head">
           <h1><span>Hi,</span> <span class="block name-span">I'm Neil</span></h1>
           <p><span>a</span><span>web developer</span> <span>based</span> <span>in</span><span class="block">Toronto, Canada</span></p>
-          <a href="resume/neil-resume.pdf" class="btn" download><i class="fa fa-download"></i><span class="hidden">Download</span>Resume</a>
+          <a href="resume/resume-neil-moras.pdf" class="btn" download><i class="fa fa-download"></i><span class="hidden">Download</span>Resume</a>
         </div>
       </div>
       <div class="social-icon">
@@ -77,7 +105,8 @@
           <img class="about-img" src="image/about-me-self-image.jpg" alt="Photo of Neil Moras">
         </div>
         <div class="about-head">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>I am  an  aspiring Web Developer with  an add-on of  over six  years of previous experience in  Hotel Management.  I am always curious to learn, develop  and fix new things  which comes in my way and developing websites and applications  is what I enjoy always keeps me going .  In my spare time I enjoy video games, cycling , drawing, listening to music and long walks.
+          </p>
         </div>
       </div>
     </div>
@@ -146,21 +175,21 @@
       </div>
       <div class="grid-flex">
         <div class="col col-image ">
-            <img src="image/artboardimage.jpg" alt="">
+            <img src="image/movie-soundtrack-api.png" alt="image of music+soundtrack api project">
         </div>
         <div class="col col-text">
           <div class="aligner-item">
             <h3>Movies + Soundtrack API App</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="#">Github</a>
-            <a href="#">Live</a>
+            <a href="https://github.com/NeilMoras/Movies_Soundtrack_Api_Project">Github</a>
+            <a href="https://music-soundtrack-api.neilmoras.ca/">Live</a>
           </div>
         </div>
       </div>
       <div class="grid-flex">
         <div class="col col-image">
-          <img src="image/artboardimage.jpg" alt="">
+          <img src="image/animation-project-img.png" alt="music+soundtrack api project cover image">
         </div>
         <div class="col col-text col-left">
           <div class="aligner-item">
@@ -188,7 +217,7 @@
       </div>
       <div class="grid-flex">
         <div class="col col-image">
-        <img src="image/artboardimage.jpg" alt="">
+        <img src="image/ticket-system-img.png" alt="">
         </div>
         <div class="col col-text col-left">
           <div class="aligner-item">
@@ -202,21 +231,21 @@
       </div>
       <div class="grid-flex">
         <div class="col col-image">
-            <img src="image/artboardimage.jpg" alt="">
+            <img src="image/passion-project-img.png" alt="">
         </div>
         <div class="col col-text">
           <div class="aligner-item">
             <h3>Fighter Jets World</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a href="#">Github</a>
-              <a href="#">Live</a>
+              <a href="https://github.com/NeilMoras/PassionProject_n01454501/tree/master">Github</a>
+
           </div>
         </div>
       </div>
       <div class="grid-flex">
         <div class="col col-image">
-            <img src="image/artboardimage.jpg" alt="">
+            <img src="image/code-snippet-project-img.png" alt="">
         </div>
         <div class="col col-text col-left">
           <div class="aligner-item">
@@ -252,27 +281,29 @@
           <div class="text">
             <p>Hello! I’m interested in open opportunies to showcase my skills and learning. If you happen
               to have any request or clarifications, please don’t hesitate to use this form.</p>
+              <p class="successMessage"><?= $formSentMessage; ?></p>
+              <p class="successMessage"><?= $errors; ?></p>
           </div>
-          <form action="#">
+          <form action="" method="post">
             <div class="form-row">
               <div class="input-data">
-                <input type="text"  id="fullname"  name="fullname" required>
+                <input type="text"  id="fullname"  name="fullname" >
                 <label for="fullname">Name</label>
               </div>
               <div class="input-data row-block">
-                <input type="email" id="email"  name="email" required>
+                <input type="email" id="email"  name="email" >
                 <label for="email">Email</label>
               </div>
             </div>
             <div class="form-row">
               <div class="input-data">
-                <input type="text" id="subject" name="subject" required>
+                <input type="text" id="subject" name="subject" >
                 <label for="subject">Subject</label>
               </div>
             </div>
             <div class="form-row">
               <div class="input-data textarea">
-                <textarea rows="8" cols="80" id="message" name="message" required></textarea>
+                <textarea rows="8" cols="80" id="message" name="message" ></textarea>
                 <label for="message">Message</label>
               </div>
             </div>
