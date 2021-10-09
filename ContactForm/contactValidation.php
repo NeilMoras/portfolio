@@ -18,13 +18,17 @@ function validateContactForm($fullname,$email,$subject, $message, $errors)
 
 //IF EMAIL EMPTY OR NOT A VALID FORMAT, THROW AN ERROR
     if (empty($email)) {
-        $errors .= "";
-    } else {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors .= "Please enter valid email format<br/>";
-        }
+        $errors .= "Please enter your fill name";
+    } else{
         $errors .= "";
     }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors .= "Please enter valid email format<br/>";
+        } else{
+            $errors .= "";
+        }
+
 
 
 //IF ENQURY SELECTION ID EMPTY, THROW AN ERROR
